@@ -3,6 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <title>Hello Electron React!</title>
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
     <script>
       (() => {
         if (
@@ -40,7 +47,7 @@
         if (scripts.length) {
           document.write(
             scripts
-              .map(script => `<script defer src="${script}"><\/script>`)
+              .map((script) => `<script defer src="${script}"><\/script>`)
               .join('')
           );
         }
