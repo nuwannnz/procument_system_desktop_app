@@ -9,6 +9,7 @@ import routes from '../../constants/routes.json';
 
 import SideBar from './SideBar';
 import BudgetPage from '../../containers/BudgetPage';
+import CreateUsersPage from '../../containers/CreateUsersPage';
 
 export default function Dashboard() {
   const history = useHistory();
@@ -35,6 +36,7 @@ export default function Dashboard() {
         <Button onClick={() => dispatch(logout())}>Log out</Button>
         <Switch>
           <Route path={routes.BUDGET} component={BudgetPage} />
+          <Route path={routes.CREATE_USERS} component={CreateUsersPage} />
         </Switch>
       </div>
     </div>
