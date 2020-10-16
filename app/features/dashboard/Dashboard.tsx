@@ -11,6 +11,7 @@ import SideBar from './SideBar';
 import BudgetPage from '../../containers/BudgetPage';
 import CreateUsersPage from '../../containers/CreateUsersPage';
 import ViewUsersPage from '../../containers/ViewUsersPage';
+import SitesPage from '../../containers/SitesPage';
 
 export default function Dashboard() {
   const history = useHistory();
@@ -33,12 +34,11 @@ export default function Dashboard() {
       </div>
 
       <div className="h-100 container" style={{ width: '80%' }}>
-        <h1>Dashboard {authEmail}</h1>
-        <Button onClick={() => dispatch(logout())}>Log out</Button>
         <Switch>
           <Route path={routes.BUDGET} component={BudgetPage} />
           <Route path={routes.CREATE_USERS} component={CreateUsersPage} />
           <Route path={routes.VIEW_USERS} component={ViewUsersPage} />
+          <Route path={routes.SITES} component={SitesPage} />
         </Switch>
       </div>
     </div>
