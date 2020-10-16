@@ -30,7 +30,7 @@ export default function Dashboard() {
         <SideBar />
       </div>
 
-      <div className="h-100" style={{ width: '80%' }}>
+      <div className="h-100 container" style={{ width: '80%' }}>
         <h1>Dashboard {authEmail}</h1>
         <Button onClick={() => dispatch(logout())}>Log out</Button>
         <Switch>
