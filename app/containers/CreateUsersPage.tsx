@@ -12,7 +12,7 @@ export default function CreateUsersPage() {
 
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  const [role, setRole] = useState(-1);
+  const [role, setRole] = useState(2);
   const [isSaving, setIsSaving] = useState(false);
   const [displaySuccessMsg, setDisplaySuccessMsg] = useState(false);
 
@@ -30,6 +30,9 @@ export default function CreateUsersPage() {
       );
       if (result.data.status) {
         setDisplaySuccessMsg(true);
+        setEmail('');
+        setPassword('');
+        setRole(2);
         setTimeout(() => {
           setDisplaySuccessMsg(false);
         }, 2000);
@@ -73,7 +76,7 @@ export default function CreateUsersPage() {
                 <Form.Control
                   onChange={(e) => setPassword(e.target.value)}
                   value={password}
-                  type="text"
+                  type="password"
                 />
               </Form.Group>
             </Col>
