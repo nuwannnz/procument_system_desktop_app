@@ -71,8 +71,8 @@ export const loginAsync = (
   setLoading(false);
   if (result.data) {
     if (result.data.isAuth) {
-      const { email, id, role } = result.data.userInfo;
-      dispatch(login({ email, id, role, token: result.data.token }));
+      const { email, id, userRole } = result.data.userInfo;
+      dispatch(login({ email, id, role: userRole, token: result.data.token }));
     }
     return true;
   }
@@ -84,4 +84,5 @@ export default loginSlice.reducer;
 export const selectIsAuth = (state: RootState) => state.login.isAuth;
 export const selectAuthToken = (state: RootState) => state.login.token;
 export const selectAuthEmail = (state: RootState) => state.login.email;
+export const selectAuthRole = (state: RootState) => state.login.role;
 export const selectIsLoading = (state: RootState) => state.login.loading;

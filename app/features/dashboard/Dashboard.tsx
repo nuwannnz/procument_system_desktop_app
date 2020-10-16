@@ -1,11 +1,14 @@
 /* eslint-disable react/jsx-one-expression-per-line */
-import React, { useEffect } from 'react';
+import React, { ReactNode, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router';
+import { Route, Switch, useHistory } from 'react-router';
 import { RootState } from '../../store';
 import { logout, selectAuthToken, selectAuthEmail } from '../login/loginSlice';
 import routes from '../../constants/routes.json';
+
+import SideBar from './SideBar';
+import BudgetPage from '../../containers/BudgetPage';
 
 export default function Dashboard() {
   const history = useHistory();
@@ -19,12 +22,21 @@ export default function Dashboard() {
       // not logged in
       history.push(routes.LOGIN);
     }
-  }, [authToken]);
+  }, [authToken, history]);
 
   return (
-    <div>
-      <h1>Dashboard {authEmail}</h1>
-      <Button onClick={() => dispatch(logout())}>Log out</Button>
+    <div className="d-flex vh-100 w-100">
+      <div className="h-100" style={{ width: '20%' }}>
+        <SideBar />
+      </div>
+
+      <div className="h-100" style={{ width: '80%' }}>
+        <h1>Dashboard {authEmail}</h1>
+        <Button onClick={() => dispatch(logout())}>Log out</Button>
+        <Switch>
+          <Route path={routes.BUDGET} component={BudgetPage} />
+        </Switch>
+      </div>
     </div>
   );
 }

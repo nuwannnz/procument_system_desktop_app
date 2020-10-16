@@ -1,5 +1,13 @@
 {
   "COUNTER": "/counter",
   "LOGIN": "/login",
-  "DASHBOARD": "/"
+  "DASHBOARD": "/",
+  "CREATE_USERS": "/create_users",
+  "VIEW_USERS": "/view_users",
+  "BUDGET": "/budget",
+  "INVOICE": "/invoice",
+  "ORDERS": "/orders",
+  "SITES": "/sites",
+  "RETURN_REQUESTS": "/returns",
+  "SUPPLIER": "/supplier"
 }
