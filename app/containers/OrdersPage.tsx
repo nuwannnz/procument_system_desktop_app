@@ -172,6 +172,36 @@ export default function OrdersPage() {
                   />
                 ))}
             </Tab>
+            <Tab eventKey="4" title="Delivered">
+              {orderList
+                .filter((o: any) => o.state === 7)
+                .map((o: any) => (
+                  <OrderItem
+                    key={o.id}
+                    orderId={o.id}
+                    siteName={o.site.name}
+                    viewClickHandler={(id) => {
+                      setSelectedPendingOrder(o);
+                      setDisplayPendingOrderModal(true);
+                    }}
+                  />
+                ))}
+            </Tab>
+            <Tab eventKey="5" title="Completed">
+              {orderList
+                .filter((o: any) => o.state === 8)
+                .map((o: any) => (
+                  <OrderItem
+                    key={o.id}
+                    orderId={o.id}
+                    siteName={o.site.name}
+                    viewClickHandler={(id) => {
+                      setSelectedPendingOrder(o);
+                      setDisplayPendingOrderModal(true);
+                    }}
+                  />
+                ))}
+            </Tab>
           </Tabs>
         </div>
       </div>

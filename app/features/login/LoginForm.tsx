@@ -54,7 +54,7 @@ export default function LoginForm() {
                 <Form.Control
                   onChange={(e) => setPassword(e.target.value)}
                   value={password}
-                  type="text"
+                  type="password"
                   placeholder="Enter password here"
                 />
               </Form.Group>

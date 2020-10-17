@@ -51,10 +51,4 @@ export const MenuItemList: MenuItemType[] = [
     roleLevel: 3,
     link: routes.RETURN_REQUESTS,
   },
-  {
-    index: 8,
-    title: 'Supplier',
-    roleLevel: 3,
-    link: routes.RETURN_REQUESTS,
-  },
 ];
