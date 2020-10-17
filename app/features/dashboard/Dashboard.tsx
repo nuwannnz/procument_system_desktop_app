@@ -12,6 +12,7 @@ import BudgetPage from '../../containers/BudgetPage';
 import CreateUsersPage from '../../containers/CreateUsersPage';
 import ViewUsersPage from '../../containers/ViewUsersPage';
 import SitesPage from '../../containers/SitesPage';
+import OrdersPage from '../../containers/OrdersPage';
 
 export default function Dashboard() {
   const history = useHistory();
@@ -39,6 +40,7 @@ export default function Dashboard() {
           <Route path={routes.CREATE_USERS} component={CreateUsersPage} />
           <Route path={routes.VIEW_USERS} component={ViewUsersPage} />
           <Route path={routes.SITES} component={SitesPage} />
+          <Route path={routes.ORDERS} component={OrdersPage} />
         </Switch>
       </div>
     </div>
